@@ -1,0 +1,20 @@
+
+<%= link_to 'ADD STOCK', new_stock_path %>
+<%= link_to 'Back', welcome_index_path %>
+<h2> Stock info</h2>
+<% if @stock %>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Price</th>
+		<th>Description</th>
+	</tr>
+	
+	<tr>
+		<td><%= @stock.name %></td>
+		<td><%= @stock.latest_price %></td>
+		<td><%= @stock.symbol %></td>
+
+	</tr>
+</table> 
+<%end%>

@@ -1,0 +1,12 @@
+<h2> Add Stocks to the List of available stocks below</h2>
+
+
+<%= form_with scope: :stock, url: stocks_path, local: true do |form| %>
+	<p>
+		<%= form.label :name %><br>
+		<%= form.text_field :name %>
+	</p>
+	<p>
+		<%= form.submit %>
+	</p>
+	<%end%>

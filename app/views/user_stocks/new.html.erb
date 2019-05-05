@@ -1,0 +1,17 @@
+<h2> Add Stocks to the User Profile</h2>
+
+
+<%= form_with scope: :user_stock, url: stock_user_stocks_path, local: true do |form| %>
+	<p>
+		<%= form.label :user_id %>
+		<%= form.number_field :user_id %>
+	</p>
+
+	<p>
+		<%= form.label :shares %>
+		<%= form.number_field :shares %>
+	</p>
+	<p>
+		<%= form.submit %>
+	</p>
+	<%end%>

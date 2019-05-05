@@ -1,0 +1,23 @@
+<h2> Available stocks</h2>
+<%= link_to 'ADD STOCK', new_stock_path %>
+
+<h2> List of stocks</h2>
+<% if @stock %>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Price</th>
+		<th>Description</th>
+	</tr>
+	<% @stock.each do |stock| %>
+	<tr>
+		<td><%= stock.name %></td>
+		<td><%= stock.latest_price %></td>
+		<td><%= stock.symbol %></td>
+		<td><%= link_to 'Add stock to user', new_stock_user_stock_path(stock) %></td>
+		<td><%= link_to 'show', stock_path(stock) %></td>
+		<td><%= link_to 'delete', stock_path(stock), method: :delete %></td>
+	</tr>
+<%end%>
+</table> 
+<%end%>

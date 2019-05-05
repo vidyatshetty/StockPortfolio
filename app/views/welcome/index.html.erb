@@ -1,0 +1,13 @@
+<h1>"Welcome to your Stock Portfolio"</h1>
+<% if current_user && current_user.admin == true %>
+	<%= link_to 'ADD STOCK', new_stock_path %>
+	<%= link_to 'VIEW STOCK LIST', stocks_path %>
+	<%end%>
+
+
+<% if current_user %>
+    <%= link_to 'Logout',  destroy_user_session_path, method: :delete %>
+    <% else %>
+    <%= link_to 'Sign up', new_user_registration_path %>
+    <%= link_to 'Sign in' , new_user_session_path %>
+    <% end %>
