@@ -17,8 +17,6 @@ class UserStocksController < ApplicationController
 
 	def create
 		@stock = Stock.find(params[:stock_id])
-		#@userid = User.find(params[:user_id])
-		$si = params[:name]
 		@user_stock = @stock.user_stocks.new(user_stock_params)
 		@user_stock.save
 		redirect_to @stock
