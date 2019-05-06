@@ -11,3 +11,7 @@
     <%= link_to 'Sign up', new_user_registration_path %>
     <%= link_to 'Sign in' , new_user_session_path %>
     <% end %>
+
+  <% if current_user && current_user.admin == false %>
+  <%= link_to 'View my portfolio', user_user_stocks_path(current_user.id) %>
+  <% end %>
