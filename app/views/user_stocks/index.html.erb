@@ -1,18 +1,28 @@
 <h2> My Portfolio</h2>
 <%= link_to 'Back', root_path %> 
 <% if @user_stock %>
-<%= @stock_details %>
 <table>
 	<tr>
 		<th>Company</th>
 		<th>Shares</th>
-		<th>User_id</th>
+		<!-- <th>User_id</th> -->
+		<!-- <th>symbol</th> -->
+		<th>Latest price</th><br><br>
+		<th>Total price</th>
 	</tr>
 	<% @user_stock.each do |user_stock| %>
 	<tr>
-		<td><%= user_stock.id %></td>
+		<td><%= user_stock.stock.symbol %></td>
 		<td><%= user_stock.shares %></td>
-		<td><%= user_stock.user_id %></td>
+		<!-- <td><%= user_stock.id %></td> -->
+		
+		<!-- <td><%= user_stock.user_id %></td> -->
+		<td>
+			<%= "$" %>
+			<%= user_stock.stock.latest_price %></td>
+		<td>
+			<%= "$" %>
+			<%= user_stock.stock.latest_price * user_stock.shares %></td>
 	</tr>
 <%end%>
 </table> 

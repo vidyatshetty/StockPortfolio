@@ -1,6 +1,11 @@
 require 'stock_quote'
 
 class StocksController < ApplicationController
+	
+	before_action :authenticate_user!
+	before_action :authorized?
+	
+
 
 	def new
 		@stock = Stock.new(params[:name])
@@ -38,5 +43,13 @@ class StocksController < ApplicationController
 	private
 	def stock_params
 		params.require(:stock).permit(:name, :symbol, :user_account_id, :latest_price)
+	end
+
+	def authorized?
+		if current_user.admin == false
+			flash[:error] = "You are not authorized"
+			redirect_to root_path
+		end
+
 	end
 end

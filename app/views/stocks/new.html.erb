@@ -4,7 +4,7 @@
 <%= form_with scope: :stock, url: stocks_path, local: true do |form| %>
 	<p>
 		<%= form.label :name %><br>
-		<%= form.text_field :name %>
+		<%= form.text_field :name, placeholder: "eg.. fb, goog, aapl" %>
 	</p>
 	<p>
 		<%= form.submit %>
