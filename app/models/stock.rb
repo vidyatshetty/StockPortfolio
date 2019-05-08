@@ -10,7 +10,6 @@ class Stock < ApplicationRecord
 				symbol: stock.symbol,
 				latest_price: stock.latest_price)
 			new_stock
-		#rescue Exception => e
 			#return stock
 		end
 	end
