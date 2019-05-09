@@ -9,4 +9,12 @@ class User < ApplicationRecord
 
 
   validates :password, presence: true
+
+  after_create :welcome_send
+
+
+  private
+  def welcome_send
+  	WelcomeMailer.welcome_send(self).deliver
+  end
 end

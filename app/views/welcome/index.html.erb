@@ -1,3 +1,12 @@
+<html>
+<head>
+<style>
+    h1{
+      text-align: center
+    }
+</style>
+
+
 <h1>"Welcome to your Stock Portfolio"</h1>
 <% if current_user && current_user.admin == true %>
 	<%= link_to 'ADD STOCK', new_stock_path %>
@@ -15,3 +24,5 @@
   <% if current_user && current_user.admin == false %>
   <%= link_to 'View my portfolio', user_user_stocks_path(current_user.id) %>
   <% end %>
+</body>
+</html>

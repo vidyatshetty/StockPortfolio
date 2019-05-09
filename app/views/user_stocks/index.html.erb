@@ -20,8 +20,11 @@
 
 
 <h2> My Portfolio</h2>
-<%= link_to 'Back', root_path %> 
-<% if @user_stock %>
+<%= link_to 'Back', root_path %>
+<% if @user_stock.count == 0 %>
+<h2>No Stocks available to view </h2>
+<% end %>
+<% if @user_stock &&  @user_stock.count != 0 %>
 <table>
 	<tr>
 		<th>Company</th>
