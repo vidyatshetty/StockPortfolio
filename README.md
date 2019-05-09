@@ -30,7 +30,7 @@ to enable email delivery else you will get error and you can not signup or do "f
 ```
 
 "Steps"
-* create or use your existing gmail account and enable less secure apps in settings else you won't be able to do perform email delivery because of gmail's security features.
+* create or use your existing gmail account and enable less secure apps in settings else you won't be able to do email delivery because of gmail's security features.
 
 
 # Story board for the project
