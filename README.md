@@ -4,17 +4,17 @@
 
 #Running
 
-'bundle install'
+'''bundle install'''
 
-'rake db:migrate'
+'''rake db:migrate'''
 
 #Usage
 
 Add admin role to user in your rails console 
 
-'@user = User.find(id)'
-'@user.admin = true'
-'@user.save'
+'''@user = User.find(id)
+  @user.admin = true
+@user.save'''
 
 
 Story board for the project
