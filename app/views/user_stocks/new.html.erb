@@ -4,12 +4,12 @@
 <%= form_with scope: :user_stock, url: stock_user_stocks_path, local: true do |form| %>
 	<p>
 		<%= form.label :user_id %>
-		<%= form.number_field :user_id %>
+		<%= form.number_field :user_id, placeholder: "enter user id eg ..1,2,3...", :required => true %>
 	</p>
 
 	<p>
 		<%= form.label :shares %>
-		<%= form.number_field :shares %>
+		<%= form.number_field :shares, placeholder: "eg.. 1,2,3", :required => true %>
 	</p>
 	<p>
 		<%= form.submit %>
