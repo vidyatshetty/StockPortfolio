@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Stock Portfolio
 
-Things you may want to cover:
+#Running
 
-* Ruby version
+'bundle install'
 
-* System dependencies
+'rake db:migrate'
 
-* Configuration
+#Usage
 
-* Database creation
+Add admin role to user in your rails console 
 
-* Database initialization
+'@user = User.find(id)'
+'@user.admin = true'
+'@user.save'
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Story board for the project
 
-* Deployment instructions
 
-* ...
