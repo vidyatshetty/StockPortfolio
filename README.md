@@ -1,22 +1,36 @@
 # README
 
-#Stock Portfolio#
+# Stock Portfolio
 
-#Running#
+## Running
 
-'''bundle install'''
+```
+ bundle install
+```
 
-'''rake db:migrate'''
+```
+rake db:migrate
+```
 
-#Usage
+# Usage
 
 Add admin role to user in your rails console 
 
-'''ruby
+```ruby
   @user = User.find(id)
   @user.admin = true
   @user.save(validate: false)
-  '''
+```
+# Please follow the following steps before you signup or try to do password reset (email delivery)
+
+```
+"In  config\environments\development.rb please enter your valid gmail address and password in
+config.action_mailer.smtp_settings
+to enable email delivery else you will get error and you can not signup or do "forgot password"
+```
+
+"Steps"
+* create or use your existing gmail account and enable less secure apps in settings else you won't be able to do perform email delivery because of gmail's security features.
 
 
 Story board for the project
