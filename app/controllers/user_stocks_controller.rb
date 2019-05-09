@@ -1,9 +1,15 @@
 class UserStocksController < ApplicationController
 	before_action :authenticate_user!
+	before_action :authorized?, except: [:index]
 
 	def index
 		@userid = User.find(params[:user_id])
-		@user_stock = @userid.user_stocks.all
+		if current_user[:id] == @userid.id
+			@user_stock = current_user.user_stocks.all
+		else
+			flash[:error] = "You are not authorized"
+			redirect_to root_path
+		end
 	end
 
 	def new
@@ -29,5 +35,11 @@ class UserStocksController < ApplicationController
 	private
 	def user_stock_params
 		params.require(:user_stock).permit(:user_id, :stock_id, :shares)
+	end
+	def authorized?
+		if current_user.admin == false
+			flash[:error] = "You are not authorized"
+			redirect_to root_path
+		end
 	end
 end

@@ -6,7 +6,6 @@ class StocksController < ApplicationController
 	before_action :authorized?
 	
 
-
 	def new
 		@stock = Stock.new(params[:name])
 	end
@@ -15,6 +14,23 @@ class StocksController < ApplicationController
 	def index
 		@stock = Stock.all
 	end
+
+
+	# def edit
+	# 	@stock = Stock.find(params[:id])
+	# end
+
+	# def update
+	# 	@stock = Stock.find(params[:id])
+	# 	debugger
+	# 	if @stock.update(stock_params)
+	# 		redirect_to @stock
+	# 	#@stock = Stock.new(stock_params)
+	# 	@stock = Stock.stock_search(@stock.symbol)
+	# 	else
+	# 		render 'edit'
+	# 	end
+	# end
 
 
 	def show

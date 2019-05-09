@@ -1,6 +1,8 @@
 class Stock < ApplicationRecord
-	has_many :user_stocks
+	has_many :user_stocks, dependent: :destroy
 	has_many :users, through: :user_stocks
+	#validates :name, presence: true
+	#validates :name, uniqueness: true
 
 	def self.stock_search(symbol)
 		begin

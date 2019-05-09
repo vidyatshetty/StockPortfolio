@@ -1,0 +1,24 @@
+<html>
+<head>
+	<style>
+	h2{
+		text-align: center
+	}
+	</style>
+</head>
+<body>
+
+
+<%= form_with model: @stock, local: true do |form| %>
+<p>
+		<%= form.label :name %><br>
+		<%= form.text_field :name %>
+	</p>
+
+	<p>
+		<%= form.submit %>
+	</p>
+	<%end%>
+
+</body>
+</head>

@@ -1,12 +1,28 @@
-<h2> Add Stocks to the List of available stocks below</h2>
+<html>
+<head>
+	<style>
+	h2{
+		text-align: center
+	}
+	</style>
+</head>
+<body>
+
+<h2> Add Stocks to the list of available stocks below</h2>
+
+	<%= link_to 'VIEW STOCK LIST', stocks_path %>
+	<br><br>
 
 
 <%= form_with scope: :stock, url: stocks_path, local: true do |form| %>
 	<p>
 		<%= form.label :name %><br>
-		<%= form.text_field :name, placeholder: "eg.. fb, goog, aapl" %>
+		<%= form.text_field :name, placeholder: "eg.. fb, goog, aapl", :required => true%>
 	</p>
 	<p>
 		<%= form.submit %>
 	</p>
 	<%end%>
+
+</body>
+</html>
