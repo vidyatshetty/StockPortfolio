@@ -44,9 +44,11 @@ class StocksController < ApplicationController
 	def create
 		@stock = Stock.new(stock_params)
 		@stock  = Stock.stock_search(@stock.name)
-		if @stock.save
+		if @stock.present?
+			@stock.save
 			redirect_to @stock
 		else
+			flash[:error] = "Enter a valid symbol"
 			render 'new'
 		end
 	end

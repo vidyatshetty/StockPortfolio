@@ -1,6 +1,6 @@
 <h2> Add Stocks to the User Profile</h2>
 
-
+<%= link_to 'Back', stocks_path %>
 <%= form_with scope: :user_stock, url: stock_user_stocks_path, local: true do |form| %>
 	<p>
 		<%= form.label :user_id %>
