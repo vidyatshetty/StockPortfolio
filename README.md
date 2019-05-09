@@ -1,8 +1,8 @@
 # README
 
-#Stock Portfolio
+#Stock Portfolio#
 
-#Running
+#Running#
 
 '''bundle install'''
 
@@ -12,9 +12,11 @@
 
 Add admin role to user in your rails console 
 
-'''@user = User.find(id)
+'''ruby
+  @user = User.find(id)
   @user.admin = true
-@user.save'''
+  @user.save(validate: false)
+  '''
 
 
 Story board for the project
