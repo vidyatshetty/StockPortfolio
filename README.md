@@ -21,7 +21,7 @@ Add admin role to user in your rails console
   @user.admin = true
   @user.save(validate: false)
 ```
-# Please follow the following steps before you signup or try to do password reset (email delivery)
+# Please follow the below steps before you signup or try to do password reset (email delivery)
 
 ```
 "In  config\environments\development.rb please enter your valid gmail address and password in
